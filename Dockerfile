@@ -5,13 +5,13 @@ LABEL maintainer="Jorge Arco <jorge.arcoma@gmail.com>"
 ENV CLOUDSDK_CORE_DISABLE_PROMPTS 1
 ENV PATH /opt/google-cloud-sdk/bin:$PATH
 ENV DOCKER_API_VERSION=1.21
-ENV DOCKER_COMPOSE_VERSION 1.12.0
+ENV DOCKER_COMPOSE_VERSION 1.12.
 
 USER root
 
 # Install Google Cloud Components
 RUN apt update \
-    && apt install curl python \
+    && apt install curl python ant \
     && curl https://sdk.cloud.google.com | bash \
     && mv google-cloud-sdk /opt \
     && gcloud components install kubectl \
