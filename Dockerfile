@@ -5,7 +5,7 @@ LABEL maintainer="Jorge Arco <jorge.arcoma@gmail.com>"
 ENV CLOUDSDK_CORE_DISABLE_PROMPTS 1
 ENV PATH /opt/google-cloud-sdk/bin:$PATH
 ENV DOCKER_API_VERSION=1.21
-ENV DOCKER_COMPOSE_VERSION 1.12.
+ENV DOCKER_COMPOSE_VERSION 1.12.0
 
 USER root
 
