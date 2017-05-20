@@ -11,11 +11,10 @@ USER root
 
 # Install Google Cloud Components
 RUN apt update \
-    && apt install -y ant curl python \
+    && apt install -y ant curl python python-pip \
     && curl https://sdk.cloud.google.com | bash \
     && mv google-cloud-sdk /opt \
     && gcloud components install kubectl \
     && curl -fsSL https://get.docker.com/ | sh \
-    && curl -L https://github.com/docker/compose/releases/download/$DOCKER_COMPOSE_VERSION/docker-compose-Linux-x86_64 > /usr/local/bin/docker-compose \
-    && chmod +x /usr/local/bin/docker-compose
+    && pip install docker-compose
 
