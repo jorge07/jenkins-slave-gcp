@@ -12,6 +12,7 @@ USER root
 # Install Google Cloud Components
 RUN apt update \
     && apt install -y ant curl python nodejs \
+    && npm i -g yarn \
     && curl https://sdk.cloud.google.com | bash \
     && mv google-cloud-sdk /opt \
     && gcloud components install kubectl \
