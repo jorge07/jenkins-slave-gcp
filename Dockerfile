@@ -11,7 +11,7 @@ USER root
 
 # Install Google Cloud Components
 RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add - \
-    && echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+    && echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list \
     && apt update \
     && apt install -y ant curl python nodejs yarn\
     && curl https://sdk.cloud.google.com | bash \
