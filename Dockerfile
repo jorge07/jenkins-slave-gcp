@@ -10,8 +10,8 @@ ENV DOCKER_COMPOSE_VERSION 1.12.0
 USER root
 
 # Install Google Cloud Components
-RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add - \
-    && echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list \
+RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - \
+    && echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list \
     && apt update \
     && apt install -y ant curl python nodejs yarn\
     && curl https://sdk.cloud.google.com | bash \
