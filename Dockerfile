@@ -10,10 +10,12 @@ ENV DOCKER_COMPOSE_VERSION 1.12.0
 USER root
 
 # Install Google Cloud Components
-RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - \
+RUN apt update \
+    && apt install -y apt-transport-https \
+    && curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - \
     && echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list \
     && apt update \
-    && apt install -y ant curl python nodejs yarn\
+    && apt install -y apt-transport-https ant curl python nodejs yarn\
     && curl https://sdk.cloud.google.com | bash \
     && mv google-cloud-sdk /opt \
     && gcloud components install kubectl \
