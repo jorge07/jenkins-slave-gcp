@@ -16,7 +16,7 @@ RUN apt update \
     && curl -sL https://deb.nodesource.com/setup_6.x | bash - \
     && echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list \
     && apt update \
-    && apt install -y apt-transport-https ant curl python nodejs yarn npm \
+    && apt install -y apt-transport-https ant curl python nodejs gettext-base yarn npm \
     && curl https://sdk.cloud.google.com | bash \
     && mv google-cloud-sdk /opt \
     && gcloud components install kubectl \
