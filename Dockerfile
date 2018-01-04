@@ -1,4 +1,4 @@
-FROM jenkinsci/jnlp-slave:3.7-1
+FROM jenkinsci/jnlp-slave:3.15-1
 
 LABEL maintainer="Jorge Arco <jorge.arcoma@gmail.com>"
 
